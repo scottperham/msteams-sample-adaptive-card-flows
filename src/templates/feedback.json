@@ -1,0 +1,48 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Choose who you want to send feedback to and what you want to say!",
+            "wrap": true,
+            "weight": "bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Enter your feedback here:",
+            "wrap": true,
+            "weight": "bolder"
+        },
+        {
+            "id": "feedbackFor",
+            "type": "Input.Text",
+            "placeholder": "Enter a name"
+        },
+        {
+            "id": "feedback",
+            "type": "Input.Text",
+            "placeholder": "Enter your feedback",
+            "isMultiline": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Execute",
+                    "title": "Cancel",
+                    "verb": "start",
+                    "style": "destructive"
+                },
+                {
+                    "type": "Action.Execute",
+                    "title": "Finish",
+                    "verb": "finish",
+                    "style": "positive",
+                    "mode": "primary"
+                }
+            ]
+        }
+    ]
+}

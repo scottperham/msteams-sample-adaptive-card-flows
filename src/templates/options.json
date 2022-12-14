@@ -1,0 +1,50 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Choose an option from the dropdown list to start the specific flow",
+            "wrap": true,
+            "weight": "bolder"
+        },
+        {
+            "id": "choice",
+            "type": "Input.ChoiceSet",
+            "choices": [
+                {
+                    "title": "Leave Feedback",
+                    "value": "feedback"
+                },
+                {
+                    "title": "Schedule Booking",
+                    "value": "schedule"
+                },
+                {
+                    "title": "Complete Form",
+                    "value": "form"
+                }
+            ],
+            "placeholder": "Select an option"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Execute",
+                    "title": "Cancel",
+                    "verb": "start",
+                    "style": "destructive"
+                },
+                {
+                    "type": "Action.Execute",
+                    "title": "Next",
+                    "verb": "madeChoice",
+                    "style": "positive",
+                    "mode": "primary"
+                }
+            ]
+        }
+    ]
+}

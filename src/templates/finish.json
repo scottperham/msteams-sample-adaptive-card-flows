@@ -1,0 +1,43 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "All done!",
+            "wrap": true,
+            "weight": "bolder"
+        },
+        {
+            "type": "TextBlock",
+            "$when": "${feedbackFor != ''}",
+            "text": "Your feedback will be sent to **${feedbackFor}**",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "$when": "${scheduleFor != ''}",
+            "text": "Your schedule has been booked for **${scheduleFor}**",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "$when": "${formValue != ''}",
+            "text": "Your form value was **${formValue}**",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Execute",
+                    "title": "Start Over",
+                    "verb": "start",
+                    "style": "positive",
+                    "mode": "primary"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Hello ${name}! Welcome to the Adaptive Card flow sample",
+            "wrap": true,
+            "weight": "bolder",
+            "style": "heading",
+            "size": "Large"
+        },
+        {
+            "type": "TextBlock",
+            "text": "This sample demonstrates how to create a wizard type flow using adaptive cards and task modules (dialogs)",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Execute",
+                    "title": "Start the flow!",
+                    "verb": "start"
+                }
+            ]
+        }
+    ]
+}

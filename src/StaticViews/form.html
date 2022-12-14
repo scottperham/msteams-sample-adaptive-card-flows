@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="https://res.cdn.office.net/teams-js/2.0.0/js/MicrosoftTeams.min.js" integrity="sha384-QtTBFeFlfRDZBfwHJHYQp7MdLJ2C3sfAEB1Qpy+YblvjavBye+q87TELpTnvlXw4" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            microsoftTeams.app.initialize();
+
+            function submit() {
+                
+                const params = new URLSearchParams(location.search);
+
+                const formValue = document.getElementById("formValue").value
+
+                if (formValue == '') {
+                    document.getElementById("error").style.display = "block";
+                    return;
+                }
+
+                microsoftTeams.dialog.submit({
+                    replyToId: params.get("replyToId"),
+                    formValue
+                }, "86177dc1-dc90-466f-8a3d-da693c0c9649");
+            }
+        </script>
+    </head>
+    <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 30px;">
+        <h1>A Sample Form</h1>
+        <div style="margin-top: 20px;">
+            Do some stuff here...
+        </div>
+        <div style="margin-top: 20px;">
+            Input a value here:
+        </div>
+        <div id="error" style="display: none; color: #900; font-weight: bold;">Please enter a value!</div>
+        <div style="text-align: center;">
+            <div><input type="text" id="formValue" style="font-size: larger; text-align: center;" /></div>
+            <div style="margin-top: 20px;"><button style="width: 100px; height: 30px;" onclick="submit()">Submit</button></div>
+        </div>
+    </body>
+</html>
